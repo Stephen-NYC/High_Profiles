@@ -1,2 +1,7 @@
+class Post < ActiveRecord::Base
+    belongs_to :user
+  end
+  
 class User < ActiveRecord::Base
-end
+    has_many :posts
+  end

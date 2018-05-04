@@ -16,10 +16,54 @@ configure :development do
   
 get "/" do
   if session[:user_id]
+    @posts = User.find(session[:user_id]).posts
     erb :signed_in
   else
     erb :signed_out
   end
+end
+
+
+
+get "/profile" do
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    @posts = @user.posts
+  erb :posts
+  else
+  redirect "/"
+  # erb :profile
+  end
+end
+
+
+# get "/post/:id" do
+# @post = Post.find(params[:id])
+#    erb :blog_post
+# end
+
+post '/post' do
+   @user = User.find(session[:user_id])
+    @post = Post.create(title: params[:title], body: params[:body], user_id: @user.id)
+    redirect '/'
+end
+
+get "/posts" do
+  @user = User.find_by(params[:id])
+  @posts = @user.posts
+  @posts = Post.all
+  erb :posts
+end
+
+
+post "/posts" do
+  Post.create(
+    title: params[:title],
+    subject: params[:subject],
+    content: params[:content],
+    user_id: session[:user_id]
+  )
+  redirect '/posts'
 end
 
 # displays sign in form
@@ -41,14 +85,14 @@ post "/signin" do
     flash[:info] = "You have been signed in #{params[:username]}."
 
     # redirects to the home page
-    redirect "/"
+    redirect "/posts"
   else
     # lets the user know that something is wrong
     flash[:warning] = "Your username or password is incorrect"
 
     # if user does not exist or password does not match then
     #   redirect the user to the sign in page
-    redirect "/signin"
+    redirect "/"
   end
 end
 

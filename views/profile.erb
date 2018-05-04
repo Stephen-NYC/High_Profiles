@@ -1,0 +1,8 @@
+<ul>
+    <% @posts.reverse.each do |post| %>
+    <li><%= post.title %></li>
+    <li><%= post.subject %></li>
+    <li><%= post.content %></li>
+    <% end %>
+</ul>
+

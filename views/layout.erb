@@ -12,8 +12,15 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand text-light" href="#">NYCELIFE</a>
+<a class="navbar-brand" href="/">
+ <img class ="logo" src="images/nyce_logo.png" alt="logo">
+ </a>
+  <%# <img class="logo" alt="Brand" src="images/nyce_logo.png" href="/"> %>
+  <a class="navbar-brand text-light" href="/">NYCE NITE</a>
+    <a class="navbar-brand text-light" href="/posts">Posts</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,9 +32,9 @@
       </li> %>
             <li class="nav-item">
       <% if session[:user_id] %>
-        <a class="nav-link" href="/profile">My Profile</a>
+        <a class="nav-link text-light" href="/profile">My Profile</a>
       <% else %>
-        <a class="nav-link" href="/signin" />Sign In</a>
+        <a class="nav-link text-light" href="/signin" />Sign In</a>
       <% end %>
       
       </li>
@@ -36,19 +43,19 @@
       </li> %>
       <li class="nav-item">
       <% if session[:user_id] %>
-        <a class="nav-link" href="/signed_out">Sign Out</a>
+        <a class="nav-link text-light" href="/signed_out">Sign Out</a>
       <% else %>
-        <a class="nav-link" href="/signup" />Sign Up</a>
+        <a class="nav-link text-light" href="/signup" />Sign Up</a>
       <% end %>
       
       </li>
     </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <%# <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> %>
   </div>
 </nav>
 

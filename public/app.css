@@ -11,6 +11,9 @@ body {
   color: whitesmoke;
 }
 
+.logo{
+  max-height: 100px;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -24,7 +27,8 @@ ul {
 }
 
 .flash.info {
-  background-color: #7cee7c;
+  background-color: #251180;
+  opacity: .8;
 }
 
 .flash.warning {

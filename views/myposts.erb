@@ -1,13 +1,32 @@
+  <h3 class="text-white">Create a Post</h3>
+
+  <form action="/livefeed" method="post">
+    <input type="text" name="title" id="title" placeholder="What are you doing?">
+      <input type="text" name="subject" id="subject" placeholder="Your location">
+    <br>
+      <input type="text" name="content" id="content" placeholder="How do you feel??">
+    <input type="submit" value="Post">
+  </form><br>
+
+<h1 class="text-white">My Posts</h2>
+
+<div class="row"></div>
+
+<div class="row col-10">
+
 <div class="row justify-content-center">
 
     <% @user.posts.all.reverse.first(20).each do |post| %>
 
 <div class="jumbotron jumbotron-fluid col-10 text-white">
-    <h1 class="display-4"><p>Title: <%= post.title %> </h4> </h1>
-        <p class="lead"> <p>Location: <%= post.subject %></p> 
+    <h1 class="display-4"><p>Having Fun doing <%= post.title %> </h4> </h1>
+        <p class="lead"> <p>I'm by <%= post.subject %></p> 
 </p> 
-    <p class="lead">Post: <p><%= post.content %></p> 
+    <p class="lead">Mood is<p><%= post.content %></p> 
 </p>
   </div>
     <% end %>
+</div>
+<div class="row"></div>
+
 </div>

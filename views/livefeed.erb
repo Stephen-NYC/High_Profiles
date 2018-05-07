@@ -6,7 +6,7 @@
     <input type="text" name="title" id="title" placeholder="What are you doing?">
       <input type="text" name="subject" id="subject" placeholder="Location">
     <br>
-      <input type="text" name="content" id="content" placeholder="What's going on?">
+      <input type="text" name="content" id="content" placeholder="How do you feel?">
     <input type="submit" value="Post">
   </form>
 <% else %>
@@ -20,10 +20,10 @@
 
 
 <div class="jumbotron jumbotron-fluid col-7 text-white">
-    <h1 class="display-4">Activity: <%= post.title %> </h4> </h1>
-      <p class="lead"><p>Location: </p><%= post.subject %></p> 
-        <p class="lead">Post: <p><%= post.content %></p> 
-      </p>
+    <h1 class="display-4"><p>Having Fun doing <%= post.title %> </h4> </h1>
+        <p class="lead"> <p>I'm by <%= post.subject %></p> 
+</p> 
+    <p class="lead">Mood is<p><%= post.content %></p> 
     </div>
   <% end %>
 </div>

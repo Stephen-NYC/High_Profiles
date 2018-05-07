@@ -1,4 +1,4 @@
-<h2 class="accinfo text-white">My Account Information</h2>
+<h2 class="accinfo text-white">My NYCe Account Information</h2>
 
 <ul class="list-group">
   <li class="list-group-item">Username: <%= @user.username %></li>
@@ -10,7 +10,7 @@
 
     <article class="content text-white">
         <% if session[:user_id] %>
-    <h1 id="deact">Deactivate Your NYCE Profile</h1>
+    <h1 id="deact">Deactivate Your NYCe Profile</h1>
         <h5>Enter your user name to DEACTIVATE your Account!!!</h5>
 
     <form action="/myprofile" method="post">
@@ -20,7 +20,7 @@
 
   </form>
         <% else %>
-  <h1>Only Users that are logged in can post...</h1>
+  <h1>Only NYCe users that are logged in can post...</h1>
         <a href="/signin"><button class="sign-button">LOG IN</button></a>
     <% end %>
 </article>

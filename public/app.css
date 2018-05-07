@@ -1,17 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
 
+.jumbotron{
+  background-color: #1b2f5ad8;
+  text-align: center;
+}
+.container{
+  opacity: .9;
+  background-color: #0c0718;
+  font-family: 'Pangolin', cursive;
+
+}
 body {
-  font-family: 'Do Hyeon', sans-serif;
+  z-index: 3;
 }
 
 .bg-light {
-  background-color: #1b0631!important;
+  background: linear-gradient(to bottom right, black, rgb(39, 6, 39));
 }
 .navbar-brand {
   color: whitesmoke;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 33px;
 }
-
-.logo{
+.nav-link{
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 33px;
+}
+.logo{  
   max-height: 100px;
 }
 ul {
@@ -68,6 +84,9 @@ ul {
 }
 
 .background{
-  position: absolute;
+  position: fixed;
   z-index: -1;
+  height: 100%;
+  margin-top: -50px;
+
 }

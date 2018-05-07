@@ -25,45 +25,46 @@ end
 
 
 
-get "/profile" do
+get "/myposts" do
   if session[:user_id]
     @user = User.find(session[:user_id])
     @posts = @user.posts
-  erb :posts
-  else
+  erb :myposts
+    else
   redirect "/"
   # erb :profile
   end
 end
 
 
-# get "/post/:id" do
-# @post = Post.find(params[:id])
-#    erb :blog_post
-# end
+get "/myposts/:id" do
+  @post = Post.find(params[:id])
+  @posts = User.find(params[:id]).posts
 
-post '/post' do
-   @user = User.find(session[:user_id])
-    @post = Post.create(title: params[:title], body: params[:body], user_id: @user.id)
-    redirect '/'
+   erb :myposts
 end
 
-get "/posts" do
+post '/myposts' do
+   @user = User.find(session[:user_id])
+   redirect '/'
+end
+
+get "/livefeed" do
   @user = User.find_by(params[:id])
   @posts = @user.posts
   @posts = Post.all
-  erb :posts
+  erb :livefeed
 end
 
 
-post "/posts" do
+post "/livefeed" do
   Post.create(
     title: params[:title],
     subject: params[:subject],
     content: params[:content],
     user_id: session[:user_id]
   )
-  redirect '/posts'
+  redirect '/livefeed'
 end
 
 # displays sign in form
@@ -85,7 +86,7 @@ post "/signin" do
     flash[:info] = "You have been signed in #{params[:username]}."
 
     # redirects to the home page
-    redirect "/posts"
+    redirect "/livefeed"
   else
     # lets the user know that something is wrong
     flash[:warning] = "Your username or password is incorrect"
@@ -135,3 +136,99 @@ get "/signed_out" do
   
   redirect "/"
 end
+
+
+get "/myprofile/:id" do
+  @user = User.find(session[:user_id])
+  @posts = @user.posts
+    erb :myprofile
+end
+
+
+get "/myprofile" do
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+
+    erb :myprofile
+  else
+    redirect "/"
+  end
+end
+
+# post "/myprofile" do
+#   @user = User.find(session[:user_id])
+
+
+
+#     title = params[:title]
+#     id = session[:user_id]
+#     user = User.find(id)
+#   if title != user.username
+#     redirect '/myprofile'
+#   else
+#     user.posts.destroy
+#     user.profile.destroy
+#     user.destroy
+#     session[:user_id] = nil
+#     redirect '/'
+#   end
+# end
+
+
+ 
+ 
+ post '/myprofile' do
+    @user = User.find(session[:user_id])
+ 
+  if @user.username == params[:username] 
+    # && @user.password == params[:password]
+    @user.posts.each do |post|
+       Post.destroy(post.id)
+    end
+    User.destroy(session[:user_id])
+    session[:user_id] = nil
+    flash[:info] = "You have deleted your account"
+    redirect "/"
+  end
+end
+
+get "/deleteuser" do
+  if session[:user_id]
+      @posts = Post.all
+      @posts.each do |post|
+          if (post.user_id == session[:user_id] )
+              post.destroy
+          else
+              next
+          end  
+      end      
+      # @id = session[:user_id]
+      @user = User.find(session[:user_id]).destroy
+      # @posts = Post.find_by(user_id: @id).destroy
+      
+      session[:user_id] = nil
+  end
+erb :signin
+end
+
+# get "/delete_all_post" do
+#   if session[:user_id]
+#       @posts = Post.all
+#       @posts.each do |post|
+#           if (post.user_id == session[:user_id] )
+#               post.destroy
+#           else
+#               next
+#           end  
+#       end      
+#   end
+# redirect "/myprofile"
+# end
+
+# get "/delete_a_post" do
+#   if session[:user_id]
+#       Post.find_by(user_id: session[:user_id]).destroy()
+      
+#   end
+# redirect "/myprofile"
+# end

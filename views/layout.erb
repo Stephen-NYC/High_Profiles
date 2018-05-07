@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-  <title>NYCE LIFE</title>
+  <title>NYCE NITE</title>
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -18,8 +18,11 @@
  <img class ="logo" src="images/nyce_logo.png" alt="logo">
  </a>
   <%# <img class="logo" alt="Brand" src="images/nyce_logo.png" href="/"> %>
-  <a class="navbar-brand text-light" href="/">NYCE NITE</a>
-    <a class="navbar-brand text-light" href="/posts">Posts</a>
+  <%# <a class="navbar-brand text-light" href="/">NYCE NITE</a>
+    <a class="navbar-brand text-light" href="/livefeed">Live Feed</a>
+        <a class="navbar-brand text-light" href="/myprofile">My Profile</a> %>
+
+    
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,9 +33,14 @@
       <li class="nav-item active">
     <%# <a class="nav-link" href="/signin">Sign In <span class="sr-only">(current)</span></a>
       </li> %>
+        <a class="navbar-brand text-light" href="/">NYCE NITE</a>
+    <a class="navbar-brand text-light" href="/livefeed">Live Feed</a>
+        <a class="navbar-brand text-light" href="/myprofile">My Profile</a>
+
+      
             <li class="nav-item">
       <% if session[:user_id] %>
-        <a class="nav-link text-light" href="/profile">My Profile</a>
+        <a class="nav-link text-light" href="/myposts">My Posts</a>
       <% else %>
         <a class="nav-link text-light" href="/signin" />Sign In</a>
       <% end %>
@@ -59,7 +67,7 @@
   </div>
 </nav>
 
-<img src="/images/bar.jpg" class="background img-fluid" alt="Responsive image">
+<img src="/images/bar.jpg" class="background img-fluid" alt="Responsive images">
 
   <%# <nav class="navbar #000000 black">
     <div class="nav-wrapper">
@@ -88,13 +96,13 @@
         <!-- Page Content goes here -->
 
       
-  <ul>
+  <%# <ul> %>
   <% if session[:user_id] %>
 
     <!-- only show this code when signed in -->
 
     <!-- clicking on this link will hit the get "/sign-out" route -->
-    <a href="/signed_out" />Sign out</a>
+    <%# <a href="/signed_out" />Sign out</a> %>
 
   <% else %>
 
@@ -103,7 +111,7 @@
     <a href="/signup" />Sign Up</a>
    %>
   <% end %>
-  </ul>
+  <%# </ul> %>
 
   <%= yield %>
 

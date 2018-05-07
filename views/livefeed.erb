@@ -10,18 +10,18 @@
     <input type="submit" value="Post">
   </form>
 <% else %>
-  <h1>Please LOGIN to make a post...</h1>
+  <h1>Only Users that are logged in can post...</h1>
     <a href="/signin"><button class="log in">LOG IN</button></a>
 <% end %>
   <br>
-    <h1>Most Recent Posts</h1>
+    <h1>Most Recent Posts..</h1>
       <div class="row justify-content-center">
     <% @posts.reverse.first(20).each do |post| %>
 
 
-<div class="jumbotron jumbotron-fluid col-10 text-white">
+<div class="jumbotron jumbotron-fluid col-7 text-white">
     <h1 class="display-4">Activity: <%= post.title %> </h4> </h1>
-      <p class="lead">Location: <p><%= post.subject %></p> 
+      <p class="lead"><p>Location: </p><%= post.subject %></p> 
         <p class="lead">Post: <p><%= post.content %></p> 
       </p>
     </div>

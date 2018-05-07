@@ -1,4 +1,4 @@
-
+<%# 
 
   <div class="container">
         
@@ -8,12 +8,41 @@
 <div class="container">
 
   <form action="/signin" method="post">
-  <input type="text" name="username" id="username" placeholder="Username"><br><br>
+  <input type="text" name="username" id="username" placeholder="Username">
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<br><br>
   <input type="password" name="password" id="password" placeholder="Password"><br> <br>
   <input type="submit" value="Sign In">
     </form>
   </div>
 </div>
+  <br> %>
   <br>
+<h1 class="text-white">~~Please Sign in to your NYCe Account.</h1  >
+  <div class="row">
+    <div class="col"></div>
+  <div class="col-9"> 
+  
 
-    
+<br>
+    <form action="/signin" method="post">
+  <div class="form-group text-white">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group text-white">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label text-white" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+
+</div>
+  <div class="col">col</div>
+</div>

@@ -1,4 +1,4 @@
-<h1 class="text-light">Sign Up</h1>
+<%# <h1 class="text-light">Sign Up</h1>
 
       <div class="container">
 
@@ -14,5 +14,45 @@
     <input type="submit" value="Sign Up">
   </form>
 </article>
-  </div>
+  </div> %>
 
+  <br>
+  <div class="row">
+    <div class="col">col</div>
+
+  <div class="col-8">
+<h1 class="text-white">Please Fill Out This Form to Signup.</h1  >
+<br>
+    <form action="/signup" method="post">
+  <div class="form-group text-white">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group text-white">
+    <label for="exampleInputPassword1">First Name</label>
+    <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+  </div>
+  <div class="form-group text-white">
+    <label for="exampleInputPassword1">Last Name</label>
+    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+  </div>
+    <div class="form-group text-white">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="text" name="password" class="form-control" id="password" placeholder="Password">
+  </div>
+    <div class="form-group text-white">
+    <label for="exampleInputPassword1">Email Address</label>
+    <input type="email" name="email" class="form-control" id="email" placeholder="Email Address">
+  </div>
+    <div class="form-group text-white">
+    <label for="exampleInputPassword1">Birthdate</label>
+    <input type="date" name="birthday" class="form-control" id="birthday" placeholder="Birthdate">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>  
+  <br>
+</div>  
+<div class="col">col</div>
+
+</div>

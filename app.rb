@@ -25,7 +25,6 @@ get "/" do
 end
 
 
-
 get "/myposts" do
   if session[:user_id]
     @user = User.find(session[:user_id])
@@ -51,7 +50,7 @@ post '/myposts' do
 end
 
 get "/livefeed" do
-  @user = User.find_by(params[:id])
+  @user = User.find_by(params[:username])
   @posts = @user.posts
   @posts = Post.all
   erb :livefeed
@@ -148,6 +147,12 @@ get "/myprofile/:id" do
     erb :myprofile
 end
 
+get "/myprofile/:id" do
+  @user = User.find(params[:id])
+  @posts = User.find(params[:id]).posts
+  erb :myposts
+  end
+
 
 get "/myprofile" do
   if session[:user_id]
@@ -190,13 +195,15 @@ get "/deleteuser" do
       session[:user_id] = nil
   end
 erb :signin
+
+
 end
+get "/deletepost" do
+  if session[:user_id]
+      Post.find_by(user_id: session[:user_id]).destroy
 
+      session[:user_id] = nil
+ erb :myposts 
+end
+  end
 
-# get "/delete_a_post" do
-#   if session[:user_id]
-#       Post.find_by(user_id: session[:user_id]).destroy()
-      
-#   end
-# redirect "/myprofile"
-# end

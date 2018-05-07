@@ -4,13 +4,24 @@
 .jumbotron{
   background-color: #24477292;
   text-align:center;
+  border: 3px solid black;
+  text-shadow: 4px 4px #431261be;
+
 }
+
+
 .container{
   opacity: .9;
   background-color: #0c0718;
+  /* text-shadow: 2px 2px #431261be; */
+
   font-family: 'Pangolin', cursive;
+}
+.accinfo{
+  /* text-shadow: 3px 3px #431261be; */
 
 }
+
 body {
   z-index: 3;
 }
@@ -43,7 +54,7 @@ ul {
 }
 
 .flash.info {
-  background-color: #806611;
+  background-color: #d8c921e7;
   opacity: .8;
 }
 
@@ -96,6 +107,6 @@ ul {
   position: fixed;
   z-index: -1;
   width: 77%;
-  opacity: .8;
-  margin-top: 0px;
+  height: 77%;
+  opacity: .9;
 }

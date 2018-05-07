@@ -1,16 +1,13 @@
-  <div class="row justify-content-center">
+<div class="row justify-content-center">
 
     <% @user.posts.all.reverse.first(20).each do |post| %>
-    <%# <div class="container"> %>
-
 
 <div class="jumbotron jumbotron-fluid col-10 text-white">
     <h1 class="display-4"><p>Title: <%= post.title %> </h4> </h1>
-    <p class="lead"> <p>Location: <%= post.subject %></p> 
+        <p class="lead"> <p>Location: <%= post.subject %></p> 
 </p> 
-        <p class="lead">Post: <p><%= post.content %></p> 
+    <p class="lead">Post: <p><%= post.content %></p> 
 </p>
   </div>
-  <% end %>
-
+    <% end %>
 </div>

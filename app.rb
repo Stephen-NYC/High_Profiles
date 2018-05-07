@@ -126,12 +126,15 @@ end
 
 # when hitting this get path via a link
 #   it would reset the session user_id and redirect
-#   back to the homepage
+
 get "/signed_out" do
+
   # this is the line that signs a user out
+
   session[:user_id] = nil
 
   # lets the user know they have signed out
+  
   flash[:info] = "You have been signed out."
   
   redirect "/"
@@ -155,29 +158,8 @@ get "/myprofile" do
   end
 end
 
-# post "/myprofile" do
-#   @user = User.find(session[:user_id])
 
-
-
-#     title = params[:title]
-#     id = session[:user_id]
-#     user = User.find(id)
-#   if title != user.username
-#     redirect '/myprofile'
-#   else
-#     user.posts.destroy
-#     user.profile.destroy
-#     user.destroy
-#     session[:user_id] = nil
-#     redirect '/'
-#   end
-# end
-
-
- 
- 
- post '/myprofile' do
+post '/myprofile' do
     @user = User.find(session[:user_id])
  
   if @user.username == params[:username] 
@@ -202,28 +184,13 @@ get "/deleteuser" do
               next
           end  
       end      
-      # @id = session[:user_id]
       @user = User.find(session[:user_id]).destroy
-      # @posts = Post.find_by(user_id: @id).destroy
       
       session[:user_id] = nil
   end
 erb :signin
 end
 
-# get "/delete_all_post" do
-#   if session[:user_id]
-#       @posts = Post.all
-#       @posts.each do |post|
-#           if (post.user_id == session[:user_id] )
-#               post.destroy
-#           else
-#               next
-#           end  
-#       end      
-#   end
-# redirect "/myprofile"
-# end
 
 # get "/delete_a_post" do
 #   if session[:user_id]

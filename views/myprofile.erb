@@ -2,34 +2,27 @@
 
 <ul class="list-group">
   <li class="list-group-item">Username: <%= @user.username %></li>
-  <li class="list-group-item">First Name: <%= @user.first_name %></li>
-  <li class="list-group-item">Last Name: <%= @user.last_name %></li>
-  <li class="list-group-item">Birthday: <%= @user.birthday %></li>
-  <li class="list-group-item">Email: <%= @user.email %></li>
+    <li class="list-group-item">First Name: <%= @user.first_name %></li>
+        <li class="list-group-item">Last Name: <%= @user.last_name %></li>
+            <li class="list-group-item">Birthday: <%= @user.birthday %></li>
+                 <li class="list-group-item">Email: <%= @user.email %></li>
 </ul>
 
-<article class="content text-white">
-<% if session[:user_id] %>
-  <h1 id="deact">Deactivate Your NYCE Profile</h1>
-    <h5>Enter your user name to DEACTIVATE your Account!!!</h5>
-  <%# <form action="/deleteuser" method="post">
-    <input id="del-form" class="forms" type="text" name="title" id="title">
-      <br />
-    <input style="margin-top: 0;" id="sign-button" type="submit" value="DELETE">
-        <a href="/deleteuser" class="btn btn-primary" >Delete User</a>
-                <a href="/delete_a_post" class="btn btn-primary" >Delete This Post</a> %>
+    <article class="content text-white">
+        <% if session[:user_id] %>
+    <h1 id="deact">Deactivate Your NYCE Profile</h1>
+        <h5>Enter your user name to DEACTIVATE your Account!!!</h5>
 
     <form action="/myprofile" method="post">
       <input type="text" name="username" id="user_name" placeholder="Username" required>
-      <%# <input type="password" name="password" id="_password" placeholder="Password" required> %>
-      <input type="submit" value="Delete Account"> 
+        <input type="submit" value="Delete Account"> 
     </form>
 
   </form>
-<% else %>
+        <% else %>
   <h1>Please LOGIN to make a post...</h1>
-    <a href="/signin"><button class="sign-button">LOG IN</button></a>
-<% end %>
+        <a href="/signin"><button class="sign-button">LOG IN</button></a>
+    <% end %>
 </article>
 <br>
 <br>

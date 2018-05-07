@@ -1,3 +1,6 @@
+<img src="/images/nycpier.jpg" class="livefeedbg img-fluid" alt="Responsive images">
+
+
 <article class="content text-light">
 <% if session[:user_id] %>
   <h3>Create a Post</h3>
@@ -24,7 +27,11 @@
         <p class="lead"> <p>I'm by <%= post.subject %></p> 
 </p> 
     <p class="lead">Mood is<p><%= post.content %></p> 
+    
     </div>
+    
   <% end %>
+  
 </div>
+
 <%# </div>   %>

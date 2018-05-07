@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
 
 .jumbotron{
-  background-color: #1b2f5ad8;
-  text-align: center;
+  background-color: #24477292;
+  text-align:center;
 }
 .container{
   opacity: .9;
@@ -43,7 +43,7 @@ ul {
 }
 
 .flash.info {
-  background-color: #251180;
+  background-color: #806611;
   opacity: .8;
 }
 
@@ -55,7 +55,7 @@ ul {
   position: absolute;
   right: 20px;
   text-decoration:  none;
-  color: black;
+  color: rgb(213, 213, 213);
   animation: beckon;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -87,6 +87,15 @@ ul {
   position: fixed;
   z-index: -1;
   height: 100%;
+  width: 100%;
   margin-top: -125px;
 
+}
+
+.livefeedbg{
+  position: fixed;
+  z-index: -1;
+  width: 77%;
+  opacity: .8;
+  margin-top: 0px;
 }

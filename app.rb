@@ -18,6 +18,7 @@ get "/" do
   if session[:user_id]
     @posts = User.find(session[:user_id]).posts
     erb :signed_in
+    erb :index
   else
     erb :signed_out
   end

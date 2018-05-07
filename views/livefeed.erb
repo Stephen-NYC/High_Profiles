@@ -6,6 +6,7 @@
   <h3>Create a Post</h3>
 
   <form action="/livefeed" method="post">
+  
     <input type="text" name="title" id="title" placeholder="What are you doing?">
       <input type="text" name="subject" id="subject" placeholder="Location">
     <br>
@@ -27,6 +28,7 @@
         <p class="lead"> <p>I'm by <%= post.subject %></p> 
 </p> 
     <p class="lead">Mood is<p><%= post.content %></p> 
+    <p> User: <%= @user.username %> </p>
     
     </div>
     
